@@ -5,14 +5,14 @@
 ### En ligne de commande
 
 ```bash
-git clone https://github.com/georchestra/georchestra_documentation.git
+git clone https://github.com/georchestra/georchestra_documentation_template.git
 ```
 
 ### Avec GitHub Desktop
 
 - file > Clone repository
 - onglet `URL`
-- coller `https://github.com/georchestra/georchestra_documentation/`
+- coller `https://github.com/georchestra/georchestra_documentation_template/`
 - choisir un répertoire local particulier (avec la possibilité de mettre un nom particulier), sinon laisser par défaut
 - cliquer sur le bouton "Clone"
 
@@ -25,7 +25,7 @@ Copier les éléments suivants à la racine de votre projet / votre produit geor
 - le répertoire `docs_modules`
 - le fichier de configuration de la documentation `mkdocs.yml`
 - le fichier de configuration de compilation de documentation pour ReadTheDocs `.readthedocs.yaml`
-- le fichier `requirements.txt` pour l'installation de MkDocs sous Python 3.9
+- le fichier `mkdocs_requirements.txt` pour l'installation de MkDocs sous Python 3.9
 
 
 ## Modifier le .gitignore de votre projet
@@ -80,7 +80,7 @@ Il y a 3 possibilité pour installer ces modules et toutes leurs dépendances.
 C'est la meilleure méthode car elle permet de s'assurer que l'on travaille tous sur les mêmes versions. Mais il ne faut pas être bridé au niveau de l'accès à internet.
 
 ```bash
-pip install -r requirements.txt
+pip install -r mkdocs_requirements.txt
 ```
 
 

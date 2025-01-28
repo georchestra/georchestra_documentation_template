@@ -37,7 +37,7 @@ Il y a 3 possibilité pour installer ces modules.
 C'est la meilleure méthode car elle permet de s'assurer que l'on travaille tous sur les mêmes versions.
 
 ```bash
-pip install -r requirements.txt
+pip install -r mkdocs_requirements.txt
 ```
 
 Pour vérifier :

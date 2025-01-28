@@ -11,7 +11,7 @@ Mettre à jour manuellement les modules Python si nécessaire.
 ## 2. Figer les dépendances Python
 
 ```bash
-pip freeze > requirements.txt
+pip freeze > mkdocs_requirements.txt
 ```
 
 
@@ -19,7 +19,7 @@ pip freeze > requirements.txt
 
 ```bash
 rm modules/*
-python -m pip wheel -r requirements.txt -w modules/{version python + os}/
+python -m pip wheel -r mkdocs_requirements.txt -w modules/{version python + os}/
 ```
 
 

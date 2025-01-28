@@ -29,7 +29,7 @@ mkdocs:
 # Optionally declare the Python requirements required to build your docs
 python:
    install:
-   - requirements: requirements.txt
+   - requirements: mkdocs_requirements.txt
 ```
 
 
