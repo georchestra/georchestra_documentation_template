@@ -53,28 +53,26 @@ If it passes: you can manually trigger a documentation build.
 
 TODO
 
-## Configuration du webhook
+## Configuring the Webhook
 
-La mise en place d'un webhook est nécessaire si on souhaite une compilation automatique à chaque commit sur une branche spécifique.
-
+Setting up a webhook is necessary if you want an automatic build for every commit on a specific branch.
 
 [https://docs.readthedocs.io/en/latest/integrations.html](https://docs.readthedocs.io/en/latest/integrations.html)
 
-* Sur la page du projet, en haut, cliquer sur `Admin`.
-* Dans les onglets / rubriques de gauche, choisir `Intégrations`.
-* Un `Webhook entrant de Github` a été créé automatiquement. Mais à ce stade il est inopérant à cause des permissions sur Github (sauf en cas d'authentification via Github sur RTD).
-* Copier l'URL du lien
-* Allez sur la page Github du projet
-* Allez dans Settings > Webhooks
-* Cliquer sur le bouton `Add webhook`
-* Coller l'URL dans `Payload URL`
-* Content type : `application/json`
-* Secret : copier-coller le code
-* Cocher l'option `Let me select individual events.` Et choisir :
+* On the project page, at the top, click on `Admin`.
+* In the left sidebar, choose `Integrations`.
+* A `GitHub Incoming Webhook` is created automatically. However, at this stage, it is inactive due to permissions on GitHub (unless authenticated via GitHub on RTD).
+* Copy the URL link.
+* Go to the GitHub project page.
+* Navigate to Settings > Webhooks.
+* Click on the `Add webhook` button.
+* Paste the URL in `Payload URL`.
+* Content type: `application/json`.
+* Secret: copy-paste the code.
+* Check the option `Let me select individual events.` and choose:
   * Pull requests
   * Pushes
   * Releases
-* Pour finir, tout en bas, appuyer sur le bouton `Add webhook`
+* Finally, at the bottom, click on the `Add webhook` button.
 
-Pour tester si le webhooks fonctionne sur les évènements sélectionnés il suffit de modifier un fichier puis de pousser la modification sur github. Si `Pushes` a été sélectionné, alors, sur le site RTD, vérifier sur l'onglet `Compilations` si une compilation est en cours.
-
+To test if the webhook is working for the selected events, simply modify a file and push the change to GitHub. If `Pushes` was selected, then, on the RTD site, check the `Builds` tab to see if a build is in progress.
