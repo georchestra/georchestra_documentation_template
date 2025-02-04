@@ -38,7 +38,7 @@ extra:
       link: https://matrix.to/#/#georchestra:osgeo.org
 
 
-copyright: '© 2024 - geOrchestra'
+copyright: '© 2025 - geOrchestra'
 
 extra_css:
     - css/extra.css
@@ -74,7 +74,7 @@ nav:
             - technical_guides/installation/tests.md
         - Contribute:
             - technical_guides/contribute/index.md
-            - technical_guides/contribute/functionality_matrix.md
+            - technical_guides/contribute/feature_matrix.md
             - technical_guides/contribute/api.md
 
 markdown_extensions:
