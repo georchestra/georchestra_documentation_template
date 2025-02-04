@@ -8,7 +8,7 @@ edit_uri: edit/main/docs/
 
 
 theme:
-  language: fr  
+  language: en 
   features:
     # - toc.integrate
     - navigation.indexes
@@ -35,10 +35,10 @@ extra:
     - icon: fontawesome/brands/dev
       link: https://groups.google.com/group/georchestra-dev?hl=fr
     - icon: fontawesome/regular/comments
-      link: https://kiwiirc.com/client/irc.libera.chat/georchestra
+      link: https://matrix.to/#/#georchestra:osgeo.org
 
 
-copyright: '© 2023 - geOrchestra'
+copyright: '© 2024 - geOrchestra'
 
 extra_css:
     - css/extra.css
@@ -46,36 +46,36 @@ extra_css:
 extra_javascript:
     - assets/custom_versions.js
 
-# arborescence de 1er et 2e niveau à gérer ici
-# Ces entrées correspondent au modèle de documentation
-# Here do not put .fr or .en in the name of the markdown : the i18n plugin manage this for you
+# 1st and 2nd level tree structure to manage here
+# These entries match the documentation template
+# Here do not put .fr or .en in the name of the markdown: the i18n plugin manage this for you
 
 nav:
-    - Accueil: index.md 
-    - Guide utilisateur:
-        - Sommaire: guide_utilisateur/index.md
-        - Prendre en main: guide_utilisateur/prise_en_main.md
-        - Vue globale: guide_utilisateur/vue_globale.md
-        - Barres ou menus d''outils: guide_utilisateur/outils.md
-        - Aide syntaxe: guide_utilisateur/aide_syntaxe.md
-    - Guides techniques:
-        - Sommaire: guides_techniques/index.md
-        - Administrer:
-            - guides_techniques/administrer/index.md
-            - guides_techniques/administrer/une_page.md
-        - Installer:
-            - guides_techniques/installer/index.md
-            - guides_techniques/installer/presentation.md
-            - guides_techniques/installer/prerequis.md
-            - guides_techniques/installer/preparation.md
-            - guides_techniques/installer/installation.md
-            - guides_techniques/installer/configuration.md
-            - guides_techniques/installer/debug.md
-            - guides_techniques/installer/tests.md
-        - Développer:
-            - guides_techniques/developper/index.md
-            - guides_techniques/developper/matrice_fonctionnalites.md
-            - guides_techniques/developper/api.md
+    - Home: index.md 
+    - User guide:
+        - Index: user_guide/index.md
+        - Getting started: user_guide/getting_started.md
+        - Global overview: user_guide/global_overview.md
+        - Menus and toolbars: user_guide/tools.md
+        - Syntax help: user_guide/syntax_help.md
+    - Technical guides:
+        - Index: technical_guides/index.md
+        - Administration:
+            - technical_guides/administration/index.md
+            - technical_guides/administration/one_page.md
+        - Installation:
+            - technical_guides/installation/index.md
+            - technical_guides/installation/presentation.md
+            - technical_guides/installation/prerequisites.md
+            - technical_guides/installation/preparation.md
+            - technical_guides/installation/installation.md
+            - technical_guides/installation/configuration.md
+            - technical_guides/installation/debug.md
+            - technical_guides/installation/tests.md
+        - Contribute:
+            - technical_guides/contribute/index.md
+            - technical_guides/contribute/functionality_matrix.md
+            - technical_guides/contribute/api.md
 
 markdown_extensions:
   - admonition
@@ -102,27 +102,27 @@ plugins:
         reconfigure_material: true
         reconfigure_search: true
         languages:
-          - locale: fr
-            default: true
-            name: Français
-            build: true
-            site_name: "Template pour la documentation d'un composant geOrchestra"
           - locale: en
+            default: true
             name: English
             build: true
             site_name: "Documentation template for a geOrchestra component"
+          - locale: fr
+            name: Français
+            build: true
+            site_name: "Template pour la documentation d'un composant geOrchestra"
             nav_translations:
-              Accueil: "Home"
-              Guide utilisateur: "User guide"
-              Sommaire: "Summary"
-              Prendre en main: "Getting started"
-              Guides techniques: "Technical guides"
-              Vue globale: "Global overview"
-              Barres ou menus d''outils: "Tool menu"
-              Aide syntaxe: "Help syntaxe"
-              Administrer: "Administrate"
-              Installer: "Install"
-              Développer: "Contribute"
+              Home: "Accueil"
+              User guide: "Guide utilisateur"
+              Index: "Sommaire"
+              Getting started: "Prendre en main"
+              Global overview: "Vue globale"
+              Menus and toolbars: "Barres ou menus d''outils"
+              Syntax help: "Aide syntaxe"
+              Technical guides: "Guides techniques"
+              Administration: "Administrer"
+              Installation: "Installer"
+              Contribute: "Développer"
 
 
   - git-revision-date-localized:
