@@ -1,13 +1,12 @@
-# Configuration d'un projet ReadTheDocs
+# Configuring a ReadTheDocs Project
 
-## Python requirements
+## Python Requirements
 
-Ils seront repris par le compilateur de Read The Docs, donc les maintenir à jour !
+They will be picked up by the ReadTheDocs compiler, so make sure to keep them up-to-date!
 
+## Adding a `.readthedocs.yaml` Configuration File
 
-## Ajout d'un fichier configuration `.readthedocs.yaml`
-
-Dans le répertoire `docs` créer un fichier `.readthedocs.yaml`. Les réglages qui seront mis dans ce fichier seront pris en compte pour la compilation sur Read The Docs (RTD).
+In the `docs` directory, create a `.readthedocs.yaml` file. The settings in this file will be used for the compilation on Read The Docs (RTD).
 
 ```yaml
 # .readthedocs.yaml
@@ -32,32 +31,27 @@ python:
    - requirements: mkdocs_requirements.txt
 ```
 
+## Creating a New RTD Project
 
+* Go to the page [https://readthedocs.org/dashboard/](https://readthedocs.org/dashboard/).
+* Click on `Import a project`.
+* Click the `Import manually` button.
+* Enter a name/code for the product that follows the geOrchestra documentation project naming rules:
+  * All names should start with `georchestra` followed by the product name, separated by a hyphen. Example: `georchestra-cadastrapp`
+  * If it’s a plugin for a product, name it according to this example: `georchestra-mapstore2-urbanisme`
+* Paste the URL of the repository hosted on GitHub (or another online repository).
+* **IMPORTANT** Manually specify the default branch name for the project: `master` for older projects, `main` for recent ones.
+* Check the box `Edit project’s advanced options`.
+* Documentation type: `Mkdocs`.
+* Language: `French`.
+* Click on `Finish` => the RTD project is created.
 
+At this stage: test a compilation.
+If it passes: you can manually trigger a documentation build.
 
-## Création d'un nouveau projet RTD
-
-* Aller sur la page [https://readthedocs.org/dashboard/](https://readthedocs.org/dashboard/).
-* Cliquer sur `Importer un projet`.
-* Cliquer sur le bouton `Importer manuellement`.
-* Mettre un nom / code du produit en cohérence avec les règles de nommages des projets de documentation de geOrchestra :
-  * tous les noms doivent commencer par `georchestra` puis le nom du produit, séparés par un tiret. Exemple : `georchestra-cadastrapp`
-  * s'il s'agit d'un plugin d'un produit, nommer selon cet exemple : `georchestra-mapstore2-urbanisme`
-* Coller l'url du dépôt hébergé sur github (ou autre dépôt en ligne).
-* **IMPORTANT** spécifier manuellement le nom de la branche par défaut du projet : `master` pour les 'vieux' projets, `main` pour les récents.
-* Cocher la case `Modifier les options avancées du projet`.
-* Type de documentation : `Mkdocs`.
-* Langue : `French`
-* Cliquer sur `Terminer`=> le projet RTD est créé
-
-À ce stade : on teste une compilation.
-Si elle passe : on peut lancer une compilation de la doc manuellement.
-
-
-## Compilation d'une release
+## Building a Release
 
 TODO
-
 
 ## Configuration du webhook
 
