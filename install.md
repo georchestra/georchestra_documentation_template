@@ -24,6 +24,14 @@ Use a bash terminal, such as Git Bash.
 python -m venv venv_mkdocs
 source venv_mkdocs/Scripts/activate
 ```
+
+Or on Powershell:
+
+```
+python3 -m venv venv_mkdocs
+./venv_mkdocs/Scripts/Activate.ps1
+```
+
 ## Install the Required Python Modules
 
 MkDocs is a Python module. Our documentation template also uses additional modules.
