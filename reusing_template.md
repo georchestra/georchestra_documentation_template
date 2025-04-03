@@ -1,5 +1,10 @@
 # Reusing This Template
 
+## Prerequisites
+
+- Python 3.11
+- A bash terminal: Linux system terminal or Git Bash on Windows
+
 ## Clone This Code Repository
 
 ### Using the Command Line
@@ -40,67 +45,29 @@ docs/tableofcontent.md
 
 ## Install MkDocs in Your Project
 
-### Creating and Activating a Python Virtual Environment
+### By script
 
-You need to set up a Python virtual environment specific to MkDocs.
+Just launch :
 
-#### On Linux
+`bash mkdocs_installation.sh` and trust the template maintenairs.
 
-Open a terminal at the root of your project, then run:
-
-```bash
-python -m venv venv_mkdocs
-source venv_mkdocs/bin/activate
-```
-
-#### On Windows
-
-Use a Bash terminal (such as Git Bash) at the root of your project, then run:
-
-```bash
-python -m venv venv_mkdocs
-source venv_mkdocs/Scripts/activate
-```
-
-### Install the Required Python Modules
-
-MkDocs is a Python module. Our documentation template also relies on additional modules.
-
-There are three ways to install these modules and their dependencies:
-
-#### Using Requirements (Recommended)
-
-This is the best method because it ensures that everyone works with the same versions. However, it requires unrestricted internet access.
-
-```bash
-pip install -r mkdocs_requirements.txt
-```
-
-#### Fresh Install
+### Fresh Install
 
 Install the latest available versions:
 
 ```bash
-pip install mkdocs mkdocs-toc-md html5lib mkdocs-material mkdocs-callouts mkdocs-git-revision-date-localized-plugin
-```
-
-#### Using Wheels
-
-If you are in a restricted network environment without internet access and using Windows, install using the available wheel files:
-
-```bash
-python -m pip install --trusted-host pypi.org modules/3.9_windows/*.whl
+pip install mkdocs mkdocs-toc-md mkdocs-material mkdocs-callouts mkdocs-git-revision-date-localized-plugin
 ```
 
 ### Verify MkDocs Installation
 
-Running `mkdocs --version` should display something like: `mkdocs, version 1.4.2`
+Running `mkdocs --version` should display something like: `mkdocs, version 1.6.1`
 
 ## Preview the Documentation
 
 MkDocs includes a complete system for compiling your documentation source files and allows real-time previewing with every modification.
 
-Run `mkdocs serve` in the terminal and open a browser at [http://localhost:8000/](http://localhost:8000/).
+Run `bash mkdocs_run.sh` in the terminal and open a browser at [http://localhost:8000/](http://localhost:8000/).
 
 You will see the blank template. Now, you just need to adapt it to your product.
 
