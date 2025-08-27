@@ -6,7 +6,7 @@ They will be picked up by the ReadTheDocs compiler, so make sure to keep them up
 
 ## Adding a `.readthedocs.yaml` Configuration File
 
-In the `docs` directory, create a `.readthedocs.yaml` file. The settings in this file will be used for the compilation on Read The Docs (RTD).
+**In the `docs` directory, create a `.readthedocs.yaml` file.** The settings in this file will be used for the compilation on Read The Docs (RTD).
 
 ```yaml
 # .readthedocs.yaml
