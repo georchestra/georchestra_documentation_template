@@ -50,7 +50,3 @@ Lire : [maintenir à jour ce modèle.](template_maintain.md)
 
 [Configuration d'un projet ReadTheDocs pour compiler et publier la documentation.](readthedocs.md)
 
-
-
-
-
