@@ -4,6 +4,21 @@ $TemplateRepoUrl = "https://github.com/georchestra/georchestra_documentation_tem
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
 $CloneDir = Join-Path $ScriptDir ".doc_template_tmp_$Timestamp"
+$TargetDocsDir = Join-Path $ScriptDir "docs"
+$TargetMkdocsConfig = Join-Path $ScriptDir "mkdocs.yml"
+$TargetMkdocsRequirements = Join-Path $ScriptDir "mkdocs_requirements.txt"
+$TargetReadTheDocsDoc = Join-Path $ScriptDir "readthedocs.md"
+$TargetInstallScript = Join-Path $ScriptDir "mkdocs_installation.sh"
+$TargetRunScript = Join-Path $ScriptDir "mkdocs_run.sh"
+$TemplateDocsDir = Join-Path $CloneDir "docs"
+$TemplateMkdocsConfig = Join-Path $CloneDir "mkdocs.yml"
+$TemplateMkdocsRequirements = Join-Path $CloneDir "mkdocs_requirements.txt"
+$TemplateReadTheDocsDoc = Join-Path $CloneDir "readthedocs.md"
+$TemplateInstallScript = Join-Path $CloneDir "mkdocs_installation.sh"
+$TemplateRunScript = Join-Path $CloneDir "mkdocs_run.sh"
+$VenvDir = Join-Path $ScriptDir "venv_mkdocs"
+$VenvPython = Join-Path $VenvDir "Scripts\python.exe"
+$VenvMkdocs = Join-Path $VenvDir "Scripts\mkdocs.exe"
 
 function Get-PythonCommand {
     foreach ($Candidate in @("python", "py")) {
@@ -23,26 +38,26 @@ function Get-PythonCommand {
 }
 
 try {
-    if (Test-Path (Join-Path $ScriptDir "docs")) {
-        throw "Initialization aborted: $ScriptDir\docs already exists."
+    if (Test-Path $TargetDocsDir) {
+        throw "Initialization aborted: $TargetDocsDir already exists."
     }
 
     Write-Host "Cloning documentation template into $CloneDir"
     git clone --depth 1 $TemplateRepoUrl $CloneDir
 
     Write-Host "Copying documentation content into $ScriptDir"
-    Copy-Item -Path (Join-Path $CloneDir "docs") -Destination (Join-Path $ScriptDir "docs") -Recurse -Force
+    Copy-Item -Path $TemplateDocsDir -Destination $TargetDocsDir -Recurse -Force
     Write-Host "Copied docs/"
 
-    Copy-Item -Path (Join-Path $CloneDir "mkdocs.yml") -Destination (Join-Path $ScriptDir "mkdocs.yml") -Force
+    Copy-Item -Path $TemplateMkdocsConfig -Destination $TargetMkdocsConfig -Force
     Write-Host "Copied mkdocs.yml"
-    Copy-Item -Path (Join-Path $CloneDir "mkdocs_requirements.txt") -Destination (Join-Path $ScriptDir "mkdocs_requirements.txt") -Force
+    Copy-Item -Path $TemplateMkdocsRequirements -Destination $TargetMkdocsRequirements -Force
     Write-Host "Copied mkdocs_requirements.txt"
-    Copy-Item -Path (Join-Path $CloneDir "readthedocs.md") -Destination (Join-Path $ScriptDir "readthedocs.md") -Force
+    Copy-Item -Path $TemplateReadTheDocsDoc -Destination $TargetReadTheDocsDoc -Force
     Write-Host "Copied readthedocs.md"
-    Copy-Item -Path (Join-Path $CloneDir "mkdocs_installation.sh") -Destination (Join-Path $ScriptDir "mkdocs_installation.sh") -Force
+    Copy-Item -Path $TemplateInstallScript -Destination $TargetInstallScript -Force
     Write-Host "Copied mkdocs_installation.sh"
-    Copy-Item -Path (Join-Path $CloneDir "mkdocs_run.sh") -Destination (Join-Path $ScriptDir "mkdocs_run.sh") -Force
+    Copy-Item -Path $TemplateRunScript -Destination $TargetRunScript -Force
     Write-Host "Copied mkdocs_run.sh"
 
     $Python = Get-PythonCommand
@@ -50,13 +65,10 @@ try {
 
     Push-Location $ScriptDir
 
-    & $Python.Command @($Python.Arguments + @("-m", "venv", "venv_mkdocs"))
+    & $Python.Command @($Python.Arguments + @("-m", "venv", $VenvDir))
     Write-Host "Virtual environment created in .\venv_mkdocs\"
 
-    $VenvPython = Join-Path $ScriptDir "venv_mkdocs\Scripts\python.exe"
-    $VenvMkdocs = Join-Path $ScriptDir "venv_mkdocs\Scripts\mkdocs.exe"
-
-    & $VenvPython -m pip install -r (Join-Path $ScriptDir "mkdocs_requirements.txt")
+    & $VenvPython -m pip install -r $TargetMkdocsRequirements
 
     if (-not (Test-Path $VenvMkdocs)) {
         throw "MkDocs installation failed"
