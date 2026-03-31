@@ -7,13 +7,15 @@ $CloneDir = Join-Path $ScriptDir ".doc_template_tmp_$Timestamp"
 $TargetDocsDir = Join-Path $ScriptDir "docs"
 $TargetMkdocsConfig = Join-Path $ScriptDir "mkdocs.yml"
 $TargetMkdocsRequirements = Join-Path $ScriptDir "mkdocs_requirements.txt"
-$TargetReadTheDocsDoc = Join-Path $ScriptDir "readthedocs.md"
+$TargetReadTheDocsDocEn = Join-Path $ScriptDir "readthedocs_EN.md"
+$TargetReadTheDocsDocFr = Join-Path $ScriptDir "readthedocs_FR.md"
 $TargetInstallScript = Join-Path $ScriptDir "mkdocs_installation.sh"
 $TargetRunScript = Join-Path $ScriptDir "mkdocs_run.sh"
 $TemplateDocsDir = Join-Path $CloneDir "docs"
 $TemplateMkdocsConfig = Join-Path $CloneDir "mkdocs.yml"
 $TemplateMkdocsRequirements = Join-Path $CloneDir "mkdocs_requirements.txt"
-$TemplateReadTheDocsDoc = Join-Path $CloneDir "readthedocs.md"
+$TemplateReadTheDocsDocEn = Join-Path $CloneDir "readthedocs_EN.md"
+$TemplateReadTheDocsDocFr = Join-Path $CloneDir "readthedocs_FR.md"
 $TemplateInstallScript = Join-Path $CloneDir "mkdocs_installation.sh"
 $TemplateRunScript = Join-Path $CloneDir "mkdocs_run.sh"
 $VenvDir = Join-Path $ScriptDir "venv_mkdocs"
@@ -53,8 +55,10 @@ try {
     Write-Host "Copied mkdocs.yml"
     Copy-Item -Path $TemplateMkdocsRequirements -Destination $TargetMkdocsRequirements -Force
     Write-Host "Copied mkdocs_requirements.txt"
-    Copy-Item -Path $TemplateReadTheDocsDoc -Destination $TargetReadTheDocsDoc -Force
-    Write-Host "Copied readthedocs.md"
+    Copy-Item -Path $TemplateReadTheDocsDocEn -Destination $TargetReadTheDocsDocEn -Force
+    Write-Host "Copied readthedocs_EN.md"
+    Copy-Item -Path $TemplateReadTheDocsDocFr -Destination $TargetReadTheDocsDocFr -Force
+    Write-Host "Copied readthedocs_FR.md"
     Copy-Item -Path $TemplateInstallScript -Destination $TargetInstallScript -Force
     Write-Host "Copied mkdocs_installation.sh"
     Copy-Item -Path $TemplateRunScript -Destination $TargetRunScript -Force
